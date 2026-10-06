@@ -12,7 +12,8 @@ api_key = st.secrets.get("GEMINI_API_KEY") or os.environ.get("GEMINI_API_KEY")
 
 if api_key:
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-2.5-flash')
+    model = genai.GenerativeModel('gemini-1.5-flash')
+
 else:
     st.warning("⚠️ GEMINI_API_KEY が設定されていません。StreamlitのSecrets設定でAPIキーを登録してください。")
 
